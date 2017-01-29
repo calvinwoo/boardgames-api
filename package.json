@@ -1,0 +1,30 @@
+{
+  "name": "boardgames-api",
+  "version": "0.0.0",
+  "description": "API for boardgames",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --harmony",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvinwoo/boardgames-api.git"
+  },
+  "author": "Calvin Woo <calvinwoo32@gmail.com> (http://calvinwoo.com)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/calvinwoo/boardgames-api/issues"
+  },
+  "homepage": "https://github.com/calvinwoo/boardgames-api#readme",
+  "engines": {
+    "node": "7.4.0",
+    "npm": "4.1.2"
+  },
+  "dependencies": {
+    "koa": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
