@@ -7,4 +7,4 @@ const app = new Koa();
 app
   .use(json())
   .use(routes)
-  .listen(7000);
+  .listen(process.env.PORT || 3000);
