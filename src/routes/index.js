@@ -6,9 +6,9 @@ const router = new Router()
 router
   .get('/recommend/base-game/:baseGameId', async ctx => {
     const count = ctx.query.count || 1
-    
+
     const baseGame = boardgames.find(boardgame => boardgame['@objectid'] === ctx.params.baseGameId) || {}
-    console.log(baseGame['@objectid']);
+    console.log(baseGame['@objectid'])
     ctx.body = boardgames
       .filter(boardgame => boardgame === baseGame)
 //      .filter(boardgame => boardgame.boardgamedesigner === baseGame.boardgamedesigner)

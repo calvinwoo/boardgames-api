@@ -1,3 +1,4 @@
+/* eslint-disable */
   const boardgames = [
     {
       "@objectid": "161936",
