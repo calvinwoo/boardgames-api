@@ -25,11 +25,11 @@ router
 
 router
   .get('/game/:gameName', async ctx => {
-    const sanitize = /[.,\/#!$%\^&\*;:{}=\-_`~()\s]/g
+    const sanitize = /[.,/#!$%^&*;:{}=\-_`~()\s]/g
     const gameName = ctx.params.gameName
     ctx.body = boardgames
-      .find(boardgame => boardgame.name.toLowerCase().replace(sanitize, '') === gameName.toLowerCase().replace(sanitize, ''))
-      || boardgames
+      .find(boardgame => boardgame.name.toLowerCase().replace(sanitize, '') === gameName.toLowerCase().replace(sanitize, '')) ||
+      boardgames
         .find(boardgame => boardgame.name.toLowerCase().replace(sanitize, '').includes(gameName.toLowerCase().replace(sanitize, '')))
   })
 
