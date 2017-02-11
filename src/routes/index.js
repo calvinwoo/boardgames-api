@@ -17,4 +17,20 @@ router
       .slice(0, count)
   })
 
+router
+  .get('/id/:gameId', async ctx => {
+    ctx.body = boardgames
+      .find(boardgame => boardgame['@objectid'] === ctx.params.gameId)
+  })
+
+router
+  .get('/game/:gameName', async ctx => {
+    const sanitize = /[.,\/#!$%\^&\*;:{}=\-_`~()\s]/g
+    const gameName = ctx.params.gameName
+    ctx.body = boardgames
+      .find(boardgame => boardgame.name.toLowerCase().replace(sanitize, '') === gameName.toLowerCase().replace(sanitize, ''))
+      || boardgames
+        .find(boardgame => boardgame.name.toLowerCase().replace(sanitize, '').includes(gameName.toLowerCase().replace(sanitize, '')))
+  })
+
 module.exports = router.routes()

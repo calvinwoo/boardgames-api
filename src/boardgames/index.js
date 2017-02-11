@@ -26751,4 +26751,3 @@ const boardgames = [
   ];
 
 module.exports = boardgames;
-
