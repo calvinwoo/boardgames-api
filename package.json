@@ -4,7 +4,7 @@
   "description": "API for boardgames",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --harmony & esw -w .",
+    "start": "node-dev --harmony index.js & esw -w .",
     "start-production": "node --harmony index.js",
     "test": "esw ."
   },
@@ -40,7 +40,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "eslint-watch": "^2.1.14",
-    "nodemon": "^1.11.0",
+    "node-dev": "^3.1.3",
     "pre-push": "^0.1.1"
   }
 }
