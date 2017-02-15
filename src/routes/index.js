@@ -1,7 +1,10 @@
 const Router = require('koa-router')
 const boardgames = require('../boardgames')
+const articles = require('./articles')
 
 const router = new Router()
+
+articles(router)
 
 router
   .get('/recommend/base-game/:baseGameId', async ctx => {
