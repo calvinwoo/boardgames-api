@@ -1,17 +1,19 @@
 const Koa = require('koa')
 const json = require('koa-json')
+var bodyParser = require('koa-bodyparser')
 const cors = require('koa-cors')
 const routes = require('./src/routes')
 
-const app = new Koa()
-const options = {
-//  origin: '*',
-  credentials: true
-}
+const port = process.env.PORT || 3000
 
-app.use(cors(options))
+const app = new Koa()
+
+app.use(cors({credentials: true}))
 
 app
   .use(json())
+  .use(bodyParser())
   .use(routes)
-  .listen(process.env.PORT || 3000)
+  .listen(port)
+
+console.log(`Server listening at port ${3000}`)
